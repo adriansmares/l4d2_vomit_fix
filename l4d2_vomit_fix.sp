@@ -9,7 +9,7 @@ public Plugin myinfo = {
 public void Patch(Address func, Address time) {
     StoreToAddress(time + view_as<Address>(16), 0x3d088889, NumberType_Int32);
     StoreToAddress(func, 0xB8, NumberType_Int8);
-    StoreToAddress(func + view_as<Address>(1), time, NumberType_Int32);
+    StoreToAddress(func + view_as<Address>(1), view_as<int>(time), NumberType_Int32);
 }
 
 public void OnPluginStart() {
